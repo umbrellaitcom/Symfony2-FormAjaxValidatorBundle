@@ -1,0 +1,17 @@
+{% macro load_validator() %}
+{% javascripts output="js/umbrella-web-form-ajax-validator.js"
+            '@UmbrellawebFormAjaxValidatorBundle/Resources/public/js/form-ajax-validator.js'
+%}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endmacro %}
+
+{% macro initValidator(selector) %}
+{% set selector = selector|default('form') %}
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('{{selector}}').ajaxValidate();
+    })
+</script>
+{% endmacro %}
