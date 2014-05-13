@@ -1,6 +1,8 @@
 UmbrellawebFormAjaxValidatorBundle
 ========================
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/293b15fd-5214-4d14-b6a7-f1d22f76b2fa/big.png)](https://insight.sensiolabs.com/projects/293b15fd-5214-4d14-b6a7-f1d22f76b2fa)
+
 Symfony 2 Forms Ajax Validator
 
 ## INSTALLATION
