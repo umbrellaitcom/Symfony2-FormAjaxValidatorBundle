@@ -24,15 +24,15 @@ class AjaxValidatorJsonResponse extends JsonResponse
         if (!$data instanceof \Symfony\Component\Form\Form)
             throw new Exception('Invalid data for ' . __CLASS__ . '. Instance of \Symfony\Component\Form\Form expected.');
 
-        parent::__construct($this->_buildData($data), $status, $headers);
+        parent::__construct($this->buildData($data), $status, $headers);
     }
 
-    protected function _buildData(\Symfony\Component\Form\Form $form)
+    protected function buildData(\Symfony\Component\Form\Form $form)
     {
         if ($form->isValid())
             return array('status' => 'success');
 
-        $errors = $this->_getFormErrors($form);
+        $errors = $this->getFormErrors($form);
         
         if (empty($errors))
             return array('status' => 'success');
@@ -43,7 +43,7 @@ class AjaxValidatorJsonResponse extends JsonResponse
         );
     }
 
-    protected function _getFormErrors($form)
+    protected function getFormErrors($form)
     {
         $errors = array();
         
@@ -62,7 +62,7 @@ class AjaxValidatorJsonResponse extends JsonResponse
             // get errors from form child
             foreach ($form->getIterator() as $key => $child)
             {
-                if($child_err = $this->_getFormErrors($child))
+                if($child_err = $this->getFormErrors($child))
                     $errors[$key] = $child_err;
             }
         }

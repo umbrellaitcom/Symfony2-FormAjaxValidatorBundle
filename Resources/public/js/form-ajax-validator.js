@@ -164,7 +164,6 @@
                             /**
                              * break the submission only if no errors was rendered.
                              * It may be if errored a FILE elements only
-                             * @todo get rid of this.
                              */
                             if (self.handleErrors(data.errors))
                                 break;
@@ -226,7 +225,6 @@
         /**
          * Render errors
          * 
-         * @todo need to refactor field name creating 'if' statements
          * 
          * @param {object} oErrors
          * @param {string} sKey
@@ -328,7 +326,6 @@
                 case 'file':
                     /**
                      * skip the FILE fields
-                     * @todo need to handle a FILE fields.
                      */
                     if (!_fnIgnoreFiles())
                     {
